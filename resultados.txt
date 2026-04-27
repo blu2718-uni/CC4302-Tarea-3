@@ -1,0 +1,44 @@
+Sistema operativo utilizado:
+Description:	Debian GNU/Linux 13 (trixie)
+Versión del núcleo de linux:
+Linux aristoteles 6.12.74+deb13+1-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.74-2 (2026-03-08) x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -Wall -Werror -std=c18  test-h2o.c h2o.c pss.c -lm -lpthread -o h2o.bin-san
+./h2o.bin-san
+Test de prueba de semantica
+Test aprobado
+Test del orden de formacion de las moleculas
+Test aprobado
+Test de robustez
+Test aprobado
+Felicitaciones: todos los tests aprobados
+==== run-thr ====
+gcc -g -DSAN=1 -fsanitize=thread -Wall -Werror -std=c18  test-h2o.c h2o.c pss.c -lm -lpthread -o h2o.bin-thr
+./h2o.bin-thr
+Test de prueba de semantica
+Test aprobado
+Test del orden de formacion de las moleculas
+Test aprobado
+Test de robustez
+Test aprobado
+Felicitaciones: todos los tests aprobados
+==== run-g ====
+gcc -g -Wall -Werror -std=c18  test-h2o.c h2o.c pss.c -lm -lpthread -o h2o.bin-g
+./h2o.bin-g
+Test de prueba de semantica
+Test aprobado
+Test del orden de formacion de las moleculas
+Test aprobado
+Test de robustez
+Test aprobado
+Felicitaciones: todos los tests aprobados
+==== run ====
+gcc -O -DOPT=1 -Wall -Werror -std=c18  test-h2o.c h2o.c pss.c -lm -lpthread -o h2o.bin
+./h2o.bin
+Test de prueba de semantica
+Test aprobado
+Test del orden de formacion de las moleculas
+Test aprobado
+Test de robustez
+Test aprobado
+Felicitaciones: todos los tests aprobados
